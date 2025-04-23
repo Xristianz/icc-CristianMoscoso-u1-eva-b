@@ -1,3 +1,9 @@
+import javax.swing.text.View;
+
+import controllers.BookController;
+import models.Book;
+import view.ViewConsol;
+
 public class App {
     public static void main(String[] args) throws Exception {
 
@@ -32,7 +38,14 @@ public class App {
                 new Book("Computer Organization and Design", 1994),
                 new Book("Deep Learning", 2016),
                 new Book("The Elements of Statistical Learning", 2001)
-        };
+                    
+            };
+            ViewConsol vista=new ViewConsol();
+            vista.printList(books);
+            System.out.println("----------Ordenado-------");
+            BookController ordenar= new BookController();
+            ordenar.sortByName(books);
+            vista.printList(books);
 
     }
 }
